@@ -11,9 +11,8 @@
         },
 	{
             "name":     "Robert Kuznetsov",
-            "homepage": "http://bi-business.com",
             "email":    "robot3@xaker.ru"
-        },
+        }
     ],
 	"minimum-stability": "stable",
     "repositories":[

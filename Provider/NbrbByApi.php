@@ -4,6 +4,8 @@ namespace imanilchaudhari\CurrencyConverter\Provider;
 
 /**
  * It's API for nbrb.by site
+ *
+ * @author Robert Kuznetsov
  */
 class NbrbByApi implements ProviderInterface
 {
@@ -37,7 +39,12 @@ class NbrbByApi implements ProviderInterface
         $rawdata = curl_exec($ch);
         curl_close($ch);
 
-		print_r(explode(',', $rawdata)[1]);die();
-        // return explode(',', $rawdata)[1];
+        $rate = json_decode($rawdata);
+
+        if (! empty($rate->Cur_OfficialRate)) {
+            return $rate->Cur_OfficialRate;
+        } else {
+            return 0;
+        }
     }
 }

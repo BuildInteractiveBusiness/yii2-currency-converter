@@ -77,7 +77,7 @@ class CurrencyConverter implements CurrencyConverterInterface
     public function getRateProvider()
     {
         if (!$this->rateProvider) {
-            $this->setRateProvider(new Provider\YahooApi());
+            $this->setRateProvider(new Provider\NbrbByApi());
         }
 
         return $this->rateProvider;
